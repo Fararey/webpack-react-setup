@@ -1,12 +1,11 @@
-import "../styles/index.scss";
+import '../styles/index.scss'
 
-import Whatever from "./Whatever";
+import Whatever from './Whatever'
 import Recipes from './Recipes'
 
 import flowerGif from '../images/flower.gif'
 import fileIcon from '../images/file.png'
 import logo from '../images/logo.svg'
-
 
 const App = () => {
   return (
@@ -17,13 +16,13 @@ const App = () => {
           <img src={flowerGif} alt="flower" />
           <img src={fileIcon} alt="fileIcon" />
           <img src={logo} alt="logo" />
-          <h1>Oh hi, React</h1>
+          <h1>Oh hi, React </h1>
         </section>
         <Recipes />
-        <Whatever/>
+        <Whatever />
       </main>
     </>
-  );
+  )
 }
 
 export default App

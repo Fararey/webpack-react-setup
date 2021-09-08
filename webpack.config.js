@@ -1,70 +1,70 @@
-const path = require("path");
-const ReactRefreshWebpackPlugin = require("@pmmmwh/react-refresh-webpack-plugin");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
+const path = require('path')
 
-let mode = "development";
+const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+
+let mode = 'development'
+let target = 'web'
 
 const plugins = [
   new MiniCssExtractPlugin(),
   new HtmlWebpackPlugin({
-    template: "./src/index.html",
+    template: './src/index.html',
+    scriptLoading: 'blocking'
   }),
-];
+]
 
-if (process.env.NODE_ENV === "production") {
-  mode = "production";
+if (process.env.NODE_ENV === 'production') {
+  mode = 'production'
+  target = 'browserslist'
 }
 if (process.env.SERVE) {
-  plugins.push(new ReactRefreshWebpackPlugin());
+  plugins.push(new ReactRefreshWebpackPlugin())
 }
 
 module.exports = {
   mode: mode,
-  entry: "./src/index.js",
+  target: target,
+  entry: './src/index.js',
   output: {
-    path: path.resolve(__dirname, "./dist"),
-    filename: "main.js",
-    assetModuleFilename: "images/[hash][ext][query]",
-    clean: true,
+    path: path.resolve(__dirname, './dist'),
+    filename: 'main.js',
+    assetModuleFilename: 'images/[hash][ext][query]',
+    clean: true
   },
 
   module: {
     rules: [
       {
         test: /\.(png|svg|jpe?g|gif)$/i,
-        type: "asset",
+        type: 'asset',
         parser: {
           dataUrlCondition: {
-            maxSize: 30 * 1024,
-          },
-        },
+            maxSize: 30 * 1024
+          }
+        }
       },
       {
         test: /\.(s[ac]|c)ss$/i,
-        use: [
-          MiniCssExtractPlugin.loader,
-          "css-loader",
-          "postcss-loader",
-          "sass-loader",
-        ],
+        use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader', 'sass-loader']
       },
       {
         test: /\.jsx?$/,
         exclude: /node_modules/,
         use: {
-          loader: "babel-loader",
-        },
-      },
-    ],
+          loader: 'babel-loader'
+        }
+      }
+    ]
   },
   plugins: plugins,
   resolve: {
-    extensions: [".js", ".jsx"],
+    extensions: ['.js', '.jsx']
   },
   devServer: {
-    static: "./dist",
-    hot: true,
+    static: './dist',
+    hot: true
   },
-  devtool: "source-map",
-};
+  devtool: 'source-map'
+}
