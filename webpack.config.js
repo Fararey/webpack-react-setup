@@ -10,9 +10,21 @@ if (process.env.NODE_ENV === "production") {
 
 module.exports = {
   mode: mode,
+  output: {
+    assetModuleFilename: "images/[hash][ext][query]",
+  },
 
   module: {
     rules: [
+      {
+        test: /\.(png|svg|jpe?g|gif)$/i,
+        type: "asset",
+        parser: {
+          dataUrlCondition: {
+            maxSize: 30 * 1024,
+          },
+        },
+      },
       {
         test: /\.(s[ac]|c)ss$/i,
         use: [
@@ -32,8 +44,8 @@ module.exports = {
     ],
   },
   plugins: [new MiniCssExtractPlugin()],
-  resolve:{
-    extensions:[".js", ".jsx"]
+  resolve: {
+    extensions: [".js", ".jsx"],
   },
   devServer: {
     static: "./dist",
