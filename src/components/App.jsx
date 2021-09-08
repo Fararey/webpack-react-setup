@@ -1,5 +1,6 @@
 import "../styles/index.scss";
 
+import Whatever from "./Whatever";
 import Recipes from './Recipes'
 
 import flowerGif from '../images/flower.gif'
@@ -19,6 +20,7 @@ const App = () => {
           <h1>Oh hi, React</h1>
         </section>
         <Recipes />
+        <Whatever/>
       </main>
     </>
   );
