@@ -1,4 +1,6 @@
+const path = require("path");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 let mode = "development";
 
@@ -6,12 +8,13 @@ if (process.env.NODE_ENV === "production") {
   mode = "production";
 }
 
-//: /\.(s[ac]|c)ss$/i, глобальное решение, но сработает
-
 module.exports = {
   mode: mode,
   output: {
+    path: path.resolve(__dirname, "./dist"),
+    filename: "main.js",
     assetModuleFilename: "images/[hash][ext][query]",
+    clean: true,
   },
 
   module: {
@@ -43,7 +46,12 @@ module.exports = {
       },
     ],
   },
-  plugins: [new MiniCssExtractPlugin()],
+  plugins: [
+    new MiniCssExtractPlugin(),
+    new HtmlWebpackPlugin({
+      template: "./src/index.html",
+    }),
+  ],
   resolve: {
     extensions: [".js", ".jsx"],
   },
