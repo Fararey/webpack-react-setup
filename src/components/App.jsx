@@ -16,7 +16,7 @@ const App = () => {
           <img src={flowerGif} alt="flower" />
           <img src={fileIcon} alt="fileIcon" />
           <img src={logo} alt="logo" />
-          <h1>Oh hi, React</h1>
+          <h1>Oh hi, React, how are you?</h1>
         </section>
         <Recipes />
       </main>

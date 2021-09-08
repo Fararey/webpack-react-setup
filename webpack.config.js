@@ -1,4 +1,5 @@
 const path = require("path");
+const ReactRefreshWebpackPlugin = require("@pmmmwh/react-refresh-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
@@ -10,6 +11,7 @@ if (process.env.NODE_ENV === "production") {
 
 module.exports = {
   mode: mode,
+  entry: "./src/index.js",
   output: {
     path: path.resolve(__dirname, "./dist"),
     filename: "main.js",
@@ -51,6 +53,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: "./src/index.html",
     }),
+    new ReactRefreshWebpackPlugin(),
   ],
   resolve: {
     extensions: [".js", ".jsx"],
