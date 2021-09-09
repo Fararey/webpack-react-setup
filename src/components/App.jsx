@@ -6,19 +6,17 @@ import flowerGif from '../images/flower.gif'
 import fileIcon from '../images/file.png'
 import logo from '../images/logo.svg'
 
-import '../styles/index.scss'
-
 const App = () => {
   return (
     <>
       <section className="hero"></section>
       <main>
-        <section>
+        <section className="flex">
           <img src={flowerGif} alt="flower" />
           <img src={fileIcon} alt="fileIcon" />
           <img src={logo} alt="logo" />
-          <h1>Oh hi, React </h1>
         </section>
+        <h1>Oh hi, React </h1>
         <Recipes />
         <Whatever />
         <Counter />

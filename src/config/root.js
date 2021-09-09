@@ -8,6 +8,9 @@ import App from '../components/App'
 import PageNotFound from '../components/PageNotFound'
 import OnlyCounter from '../components/OnlyCounter'
 
+import '../styles/index.scss'
+import '../styles/styles.scss'
+
 const RootComponent = () => {
   return (
     <Provider store={store}>
