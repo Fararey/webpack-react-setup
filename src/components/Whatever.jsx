@@ -5,7 +5,7 @@ function Whatever() {
   return (
     <div>
       <h1>{state}</h1>
-      <button onClick={() => setState('Button Clicked')}></button>
+      <button onClick={() => setState('Button Clicked')}>Click mee</button>
     </div>
   )
 }

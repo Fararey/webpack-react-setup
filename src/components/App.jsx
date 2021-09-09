@@ -2,6 +2,7 @@ import '../styles/index.scss'
 
 import Whatever from './Whatever'
 import Recipes from './Recipes'
+import Counter from './Counter'
 
 import flowerGif from '../images/flower.gif'
 import fileIcon from '../images/file.png'
@@ -20,6 +21,7 @@ const App = () => {
         </section>
         <Recipes />
         <Whatever />
+        <Counter />
       </main>
     </>
   )
