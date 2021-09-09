@@ -3,7 +3,6 @@ const path = require('path')
 const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const ImageMinimizerPlugin = require('image-minimizer-webpack-plugin')
 
 let mode = 'development'
 let target = 'web'
@@ -14,15 +13,6 @@ const plugins = [
     template: './src/index.html',
     scriptLoading: 'blocking'
   }),
-  new ImageMinimizerPlugin({
-    minimizerOptions: {
-      plugins: [
-        ['gifsicle', { interlaced: true }],
-        ['jpegtran', { progressive: true }],
-        ['optipng', { optimizationLevel: 5 }]
-      ]
-    }
-  })
 ]
 
 if (process.env.NODE_ENV === 'production') {
