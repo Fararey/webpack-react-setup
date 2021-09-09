@@ -1,5 +1,3 @@
-import '../styles/index.scss'
-
 import Whatever from './Whatever'
 import Recipes from './Recipes'
 import Counter from './Counter'
@@ -7,6 +5,8 @@ import Counter from './Counter'
 import flowerGif from '../images/flower.gif'
 import fileIcon from '../images/file.png'
 import logo from '../images/logo.svg'
+
+import '../styles/index.scss'
 
 const App = () => {
   return (

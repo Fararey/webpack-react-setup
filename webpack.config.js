@@ -12,7 +12,7 @@ const plugins = [
   new HtmlWebpackPlugin({
     template: './src/index.html',
     scriptLoading: 'blocking'
-  }),
+  })
 ]
 
 if (process.env.NODE_ENV === 'production') {

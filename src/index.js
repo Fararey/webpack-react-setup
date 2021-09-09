@@ -1,4 +1,4 @@
-import { render } from "react-dom";
+import { render } from 'react-dom'
 
 import Root from './config/root'
 
