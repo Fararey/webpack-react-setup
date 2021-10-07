@@ -7,7 +7,7 @@ function Counter() {
   const dispatch = useDispatch()
   const value = useSelector((state) => state.counter.value)
   return (
-    <div>
+    <div>  
       <h1>{value}</h1>
       <button type="button" onClick={() => dispatch(plusCounter())}>
         +
